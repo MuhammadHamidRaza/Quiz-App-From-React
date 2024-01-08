@@ -81,11 +81,12 @@ function App() {
       setIndex(currentindex + 1);
       opt();
     } else {
+      setIndex(currentindex + 1);
+
       setClickedOption(null)
 
       setTiming(false);
-      setMinute(0);
-      setSecond(0);
+
       setShowResult(true); // Move this line inside the else block
     }
   }
@@ -114,7 +115,8 @@ function App() {
 
         ) : (
           <div>
-            Time left: {minute}:{second < 10 ? "0" : ""}{second}
+            {currentindex == questions.length? <div className="result">Your Result</div>:<div>Time left: {minute}:{second}</div>}
+            
           </div>
         )}
       </div>
